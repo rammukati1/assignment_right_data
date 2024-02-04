@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "b1b8fad2-a1b2-48d6-a7be-477ad069cf6b",
+		"name": "explorer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7208651"
+	},
+	"item": [
+		{
+			"name": "create folder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ch1\",\r\n    \"parentFolder\": null,\r\n    \"subfolders\": null,\"parent_id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/addFolder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addFolder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/folder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"folder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/folderById/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"folderById",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete by  id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/folderById/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"folderById",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
