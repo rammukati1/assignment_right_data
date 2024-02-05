@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS public.folder
+(
+    folder_id bigint NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 999999 CACHE 1 ),
+    name character varying(50) COLLATE pg_catalog."default",
+    type character varying(50) COLLATE pg_catalog."default",
+    parent_id bigint,
+    CONSTRAINT folder_pkey PRIMARY KEY (folder_id),
+    CONSTRAINT "FK" FOREIGN KEY (parent_id)
+        REFERENCES public.folder (folder_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.folder
+    OWNER to postgres;
